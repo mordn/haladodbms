@@ -1,0 +1,152 @@
+401	Írjunk blokkot, amelyben deklarálunk egy függvényt, amely paraméterként egy ügyfél azonosítóját és egy termék azonosítóját kapja, és visszaadja, hogy az ügyfél az adott termékbõl hány darabot rendelt összesen. A blokk minden 'T' 		beûvel kezdõdõ nevû ügyfélre és minden 500-nél olcsóbb (list_price) termékre hívja meg a függvényt, és írja ki az ügyfél nevét, a termék nevét, a darabszámot a képernyõre.
+
+402	Írjunk blokkot, amelyben deklarálunk egy eljárást, amely paraméterként kap egy számot, és visszaadja annak a szinuszát és koszinuszát. 
+	A blokk meghívja az eljárást 0,15,30,45,60,75,90,...360 fok értékekre és kiírja a képernyõre a fokot, és annak szinuszát, koszinuszát.
+
+403	Írjunk tárolt eljárást, amely egy dolgozónak a fizetését emeli (hr schema), azaz paraméterként egy dolgozó azonosítóját kapja, 
+	egy paraméterként kapott százalékkal megemeli a dolgozó fizetését, majd visszaadja a dolgozó nevét, és az új fizetésének értékét.
+
+404	Hívjuk meg az elõzõ tárolt eljárást több dolgozóra úgy, hogy a meghívás elõtt keressük ki a dolgozó neve alapján a dolgozó azonosítóját.
+	Próbáljuk ki a fizetés csökkentést is.
+
+405	Írjunk tárolt függvényt, amely paraméterként kap egy hónapsorszámot, és visszaadja, hogy hány olyan ügyfél van, aki az adott hónapban született. 
+
+406	Hívjuk meg az elõzõ függvényt lekérdezés segítségével.
+
+407	Hívjuk meg az elõzõ függvényt egy blokkból. 
+
+501	Írjunk blokkot, amelynek a deklarációs részében deklarálunk egy függvény. A függvény paraméterként kapott ügyfélnévhez megkeresi, hogy az adott ügyfél hány megrendelést hajtott végre, majd visszaadja ezt a számot. A blokkból 	hívjuk meg a függvényt olyan ügyfélnevekkel, amelyekre: - nincs megrendelés, - több megrendelés van, - nem szerepel az ügyfél táblában. Futtassuk a blokkot. Ha kivételt kapunk, akkor kapjuk el, és írjuk ki a hiba kódját és 	üzenetét (minden kivétel esetén).
+
+502	Írjunk blokkot, amelyben deklarálunk egy függvényt, amely paraméterként egy dátumot kap (melynek alapértelmezett értéke a rendszeridõ), és egy dátumformátumot, amelynek alapértelmezett értéke alapján a dátumból visszakaphatjuk az 	órát, a percet és a másodpercet. A függvény térjen vissza azzal a karaktersorozatból, amely az adott dátumból nyerünk a dátumformátum segítségével. A blokkban deklaráljunk egy eljárást, amely paraméterként megkapja egy ügyfél 	nevét, és visszaadja, hogy az ügyfél az utolsó rendelését melyik idõpontban hajtotta végre (karaktersorozat formátumban), és a megrendelésen hány sor szerepelt. Az eljárás az idõpont konvertálásához használja a függvényt. A 	blokkból hívjuk meg az eljárásunkat több ügyfélre. Ha kivételt dob kajuk el, és írjuk ki a hiba kódját és üzenetét. A blokk ezen kívül hívja meg a függvényt is, írja ki a futtatáskori idõpontot. Az alprogramok meghívásakor 	próbáljuk ki a név szerinti kötést és a kevert kötést is. 
+
+503	Írjunk tárolt eljárást, amely paraméterként kapott ügyfél nevéhez visszaadja az ügyfél születési dátumát és a nemét. (Itt nem kell kivételt kezelni.)
+
+504	Írjunk blokkot, amely meghívja az elõzõ tárolt eljárást. Hívjuk meg úgy is, hogy kivételt dob, és vizsgáljuk meg, hogy mi történik.
+	Bõvítsük a blokkunkat úgy, hogy a select into által okozott kivételeket elkapja, majd írja ki, hogy mi volt a hiba.
+
+505	Hozzunk létre táblát csaladtagok néven. A tábla oszlopaiban tároljuk a customers tábla azonosítóját (külsõ kulcsként hivatkozzunk rá), és a családtag nevét. A tábla elsõdleges kulcsa legyen a két oszlop együtt.
+
+506	Írjunk tárolt függvényt, amely az elõzõ feladat táblájába felvesz egy sort. A függvény a következõ paramétereket kapja: az ügyfél azonosítója és a családtag neve.Ha a függvény rendben lefutott adja vissza a beszúrt sort. Ha 	kivételt kapunk amiatt, hogy egy ügyfélhez két azonos nevû családtagot veszünk fel, akkor a kapott kivételt kezeljük: írjuk ki a képernyõre, hogy melyik ügyfél (az ügyfél neve) milyen nevû családtagja már létezik. A függvény NULL 	értékekkel térjen vissza.
+
+507	Írjunk tárolt eljárást, amely paraméterként kap egy ügyfélnevet és az ügyfél egy családtagjának a nevét. Az elõzõ tárolt függvény meghívásával szúrjuk be a megfelelõ sort az elsõ feladat táblájába. Az eljárás írja képernyõre a 	függvény által visszaadott értékeket. 
+
+508	Írjunk blokkot, amely meghívja az elõzõ feladat tárolt eljárását úgy, hogy az ügyfél családtagjának a neve null érték. A null érték miatt bekövetkezõ kivételt kezeljük, írjuk ki a képernyõre, hogy nincs megadva  a családtag neve. 	Ugyanebben a blokkban hívjuk meg az eljárást úgy is, hogy olyan ügyfelet adunk meg, amely nem létezik a customer táblában. Az emiatt kapott kivételt kezeljük, írjuk ki a képernyõre, hogy nincs ilyen ügyfél. Azt is próbáljuk ki, 	hogy olyan ügyfélnevet adjunk meg, amelybõl kettõ van az adatbázisban. Az ennek megfelelõ kivételt hasonló módon kezeljük. A kivétek kezelése mindig csak arra az egy eljáráshiváshoz tartozzon.
+
+509	Az elõzõ blokk kivételei miatt alakítsuk át a 7. feladat eljárását úgy, hogy a 8. feladatban szereplõ kivételeket kapja el, kezelje az ott megadottak szerint. A kivételkezelõ rész csak 8. feladat kivételeivel foglalkozzon.
+
+601	Írjunk triggert, amely akkor indul el, amikor a customer táblába új sor kerül be vagy a customer tábla marital_status vagy gender oszlop módosul.  
+ 	A trigger vizsgálja meg, hogy a gender-nek megfelel-e a marital_status. Nõ esetén hajadon, férjes vagy özvegy lehet a marital_status, férfi esetén nõtlen, nõs vagy özvegy lehet a marital status.  
+  	Ha nem felel meg a két oszlop egymásnak, akkor dobjunk felhasználói kivételt -20010-es kóddal és "Nem megfelelõ nem és/vagy családi állapot" üzenettel.
+
+602	Az elõzõ feladat triggerét próbáljuk ki beszúrással és módosítással is. A kapott kivételt kapjuk el és kezeljük.
+
+603	Írjunk triggert, amely akkor indul el, amikor új ügyfelet vagy terméket veszünk fel vagy ügyfelet vagy terméket törlünk. 
+ 	 A trigger egy új, napló nevû táblába írja be, hogy melyik felhasználó, mikor melyik táblábát módosította és milyen mûveletet hajtott végre.
+
+604	Az elõzõ feladat triggerét próbáljuk ki több mûvelet segítségével.
+
+605	Hozzunk létre táblát hallgatok néven. A táblának két oszlop legyen, az egyikben a hallgató nevét, a másikban a hallgató neptunkódját tároljuk. Ez utóbbi legyen a tábla elsõdleges kulcsa. 
+
+606	Írjunk triggereket, amelyek a hallgató táblából való törlésre indul el, rendre utasítás elõtt, sor elõtt, utasítás után, sor után. 
+ 	A triggerek írják ki a képernyõre, hogy õk éppen melyik triggerek, azaz utasítás elõtt/után, sor elõtt/után.
+
+607	Töröljünk egyszerre 5 sort a hallgatok táblából, amivel kipróbáljuk az elõzõ triggert. Majd írjunk olyan törlést, amely egyetlen sort sem tötöl. Nézzük meg a triggerek által kiírt eredményt.
+
+608	Hozzunk létre táblát napló néven, amelynek az oszlopai: 
+	- idopont: date 
+	- mûvelet: varchar2(20), 
+	- felhasználó: varchar2(30) 
+	- táblanév: varchar2(20) 
+	(Nem kell hozzá elsõdleges kulcs)
+
+609	írjunk triggert, amely megakadályozza, hogy a napló táblát módosítsák vagy töröljék (beszúrni lehessen bele),  
+  	azaz a trigger egy felhasználó kivételt dob -20003-as kóddal és "Érvénytelen mûvelet" üzenettel.
+
+610	Írjunk blokkot, amely elõször beszúr egy sort a táblába, véglegesíti azt a mûveletet, majd töröli a sort a táblából, és véglegesíti a mûveletet. 
+  	A kapott kivételt a blokk kapja el (csak azt a kivételt), és írja ki a hiba üzenetét a képernyõre.
+
+611	Írjunk triggert, amely a customer és a product táblákon történõ bármely DML mûveletet naplózza, azaz beszúr egy megfelelõ sort a napló táblába.
+
+612	Próbáljuk ki az elõzõ feladat triggerét.
+
+701	Írj blokkot, amely explicit kurzor segítségével sorban kilistázza egy adott (Te válaszd ki) raktár (warehouse) által tárolt termékek (product) nevét, és azt, hogy hány darab van a raktáron.
+
+702	Írj tárolt eljárást, amely paraméterként kapott raktár minden olyan terméke esetén, amely csak az adott raktárban van, megemeli a termék árát 10%-kal.
+	A megoldásban explicit kurzort használj, for update, és current of utasításrészekkel.
+
+703	Írj blokkot, amely meghívja az elõzõ feladat tárolt eljárását, és ne feledd lezárni a tranzakciót.
+
+704	Írj tárolt eljárást, amely paraméterként egy gyenge kurzorváltozót kap, ha a kurzorváltozó nincs nyitva, akkor dob egy 'Nincs nyitva a kurzováltozóó' hibaüzenetet dob, ha nyitva van, akkor egy szám és egy szöveges rekordtípusú 	sort olvas ki a kurzorváltozóból, amely értékeket a tárolt eljárás kimenõ paraméterben visszaadja. Ha a kurzorváltozóban már nincs több sor, akkor dobjon 'nincs több sor' üzenettel hibát.
+
+705	Írj blokkot, amely egy erõs kurzorváltozót deklarál, amelyhez egy szám és egy szöveges típusú mezõket tartalmazó rekordot rendelünk. A blokk nyissa meg a kurzort a hr séma department táblájánk id és name oszlopaihoz, majd hívja 	meg 3-szor az elõzõ feladat függvényét. A kurzorváltozó lezárása nélkül rendeljünk a kurzorváltozóhoz egy lekérdezést, amely a hr séma employee táblájának id és name oszlopait adja vissza, majd erre is hívjuk meg az elõzõ feladat 	függvényét. Ha a lekérdezésben nincs több sor, akkor a kapott kivételt kapjuk el. Érjük el, hogy a 2. lekérdezéshez tartozó hívások akkor is fussanak le, ha az elsõ rész hibát dobott.
+
+801	Hozz létre táblát konyvek néven, amelyben könyveknek az ISBN számát, címét, és kiadóját és a kiadás évét tároljuk. 
+	A tábla elsõdleges kulcsa az ISBN legyen. Hozzunk létre táblát példány néven, melyben a könyv raktári számát és az ISBN számát tároljuk. 
+	A tábla elsõdleges kulcsa a raktári szám legyen, az ISBN hivatkozzon a konyv tábla elsõdleges kulcsára.
+
+802	Hozzunk létre csomagot, amelynek a segítségével az elõzõ feladat két tábláját használni tudjuk. 
+	A csomag tartalmazzon egy beszur_konyv nevû publikus eljárást, egy töröl könyv nevû publikus függvényt, egy listáz nevû publikus eljárást, és nincs_ilyen_konyv, nem_megfelelo_konyv, letezo_raktari_szam nevû kivételeket. 
+	A beszur_konyv nevû eljárás paraméterként kapjon ISBN, cím, kiadó, kiadás éve, raktári szám értékeket. 
+	Elõször a könyv táblába próbáljon beszúrni, ha ott a könyv megtalálható, és az értékek megfelelnek, akkor örülünk, ha nem felelnek meg az értékek, akkor a nem_megfelelo_konyv kivételt dobjuk, 
+	ha nincs ilyen könyv, akkor beszúrjuk. Majd a megfelelõ értékeket beszúrjuk a példány táblába. 
+	Ha az adott raktári számon már létezik a könyv, akkor dobjunk letezo_raktari_szam kivetelt. 
+	A töröl könyv nevû függvény paraméterként egy raktári számot kapjon, és törölje ki csak a példány táblából az adott könyvet, majd visszatérési értékként adja vissza, hogy hány példány van még a kitörölt könyvbõl ugyanazzal az 		ISBN számmal. Ha a raktári szám nem létezik, akkor ne történjen semmi. A listáz nevû eljáráshoz definiáljunk egy privát kurzort, amely paraméterként kapott ISBN számhoz listázza a raktári számokat, a könyv címeket, 
+	a könyv kiadókat és a kiadás évét. Az eljárás megnyitja a kurzort, ha még nincs nyitva, egy sort felolvas, majd paraméterként visszaadja az eredményeket. 
+	(Ezt egy publikus rekordtípusban tegyük meg.) Ha a kurzorban nem találnuk több sort, akkor null értéket adjunk vissza. Ha nem talál ilyen ISBN számú könyvet, akkor nincs ilyen könyv kivételt dob.
+
+803	Próbáljuk ki az elõzõ feladat csomagjának az eszözeit. Vegyünk fel a táblába sorokat, ugyanolyan ISBN számmal rendelkezõeket is, próbáljuk ki a lehetséges kivételeket. 
+	Töröljünk könyvet, nézzük meg a függvény visszatérési értékét, próbáljuk ki a lehetséges kivételt, kapjuk el. 
+	A listázd próbáljuk ki úgy, hogy adott ISBN számhoz minden létezõ példányt listázzunk ki. Próbáljuk ki itt is a kivételt, kapjuk el.
+
+804	Hozz létre csomagot, amely az oe schema customer táblájának telefonszám oszlopát kezeli. Tartalmazzon
+	- eljárást, amely felvesz egy paraméterként telefonszámot egy customerhez, amelynek az azonosítóját az eljárás paraméterként kapja
+	- eljárást, amely töröl egy paraméterként kapott telefonszámot egy customer esetén, amelynek az azonosítóját az eljárás paraméterként kapja
+	- eljárást, amely egy customer paraméterként kapott telefonszámát egy másik, paraméterként kapott telefonszámra cserél. A customer id-ját az eljárás paraméterként kapja.
+	- eljárást, amely beszúr egy sort a customer táblába, (nem kell feltétlenül minden oszlopot kitölteni, de a telefonszámot töltse ki. Maximum egy telefonszámot kapjon az eljárás paraméterként)
+
+805	Próbáld ki az elõzõ feladat csomagjának eljárásait.
+
+901	Hozz létre egy beágyazott tábla típust keresztnevekhez, az elemeinek a típusa varchar2(30) legyen.
+
+902	Írj tárolt eljárást, amely paraméterként az elõzõ feladat beágyazott táblatípusát kapja, 
+	majd a képernyõre listázza abc sorrendben, hogy melyik karaktersorozatból (keresztnévbõ) hány darab van a beágyazott táblában. A feladat megoldásához asszociatív tömböt használj.
+
+903	Tölts fel együttes hozzárendeléssel egy változót, amelynek a típusa az 1 feladat beágyazott táblája a customers tábla keresztneveivel, majd hívd meg az elõzõ tárolt eljárást.
+
+904	Írjunk tárolt függvényt, amely paraméterként kap egy warehouse nevet, és visszaad egy beágyazott táblát, 
+	amely az adott warehouse-ban lévõ összes termék nevét (product_name a product_descriptionból) tartalmazza (mindegyiket csak egyszer). 
+	A feladatot együttes hozzárendeléssel oldd meg.
+
+905	Hívjuk meg az elõzõ tárolt függvényt, és írjuk ki a képernyõre a kapott kollekció tartalmát.
+
+906	Írj blokkot, amelyben deklarálsz három beágyazott táblát, amelynek az elemei rendre job_title-k, min_salary-k és max_salary-k lesznek. 
+	Olvasd fel a kollekciókba a jobs tábla minden sorát. Majd töröld ki azokat a job_title-ket, amelyek esetén a min_salary több, mint a max_salary fele. 
+	Listázd a megmaradt job_title-ket a képernyõre. Majd minden olyan dolgozónak, akik ebben a kollekcióban maradt munkakörben dolgozik, 
+	emeljük meg a fizetését a max_salary 10%-ával. A feladatban használd az együttes hozzárendelést (BULK COLLECT, FORALL). 
+	Ne feledd véglegesíteni a tranzakciót.
+
+907	Írjunk tárolt függvényt, amely egy 10 elemû dinamikus tömböt ad vissza, amelyben annak a legfeljebb 10 legrégebben ott dolgozó dolgozóknak a neve és az alkalmazásának dátuma szerepel, 
+	akik egy paraméterként kapott részlegen dolgoznak.
+
+908	Hívjuk meg a 8-as feladat függvényét és írjuk képernyõre a dinamikus tömb tartalmát.
+
+1001	Írj tárolt eljárást, amely paraméterként egy sztringet kap, és amelyrõl feltételezzük, hogy egy lekérdezést tartalmaz. 
+	Az eljárás vizsgálja meg, hogy a sztring elsõ szava select-e, ha nem, akkor dobjon felhasználói kivételt 'Nem lekérdezés' üzenettel. 
+	Ha igen, akkor feltételezzük a lekérdezésrõl, hogy egy olyan rekorddal tér vissza, amelynek két karaktersorozat típusú oszlopa van.
+	Az eljárás listázza a képernyõre a lekérdezés eredményét. 
+	Ha a lekérdezés nem megfelelõ, akkor az eljárás felhasználói kivételt adjon 'Nem megfelelõ lekérdezés' üzenettel kiegészítve a kiváltó kivétel kódjával és üzenetével.
+
+1002	Hívd meg az elõzõ feladat eljárását a következõ lekérdezésekre:
+	- a hr séma alapán melyek azon a régiónevek, és hány ország tartozik hozzájuk, amelyekhez legalább 2 ország tartozik
+	- a legfiatalabb menedzserhez tartozó dolgozók neve
+	- select 1,2 from dual
+	- select 1 from dual
+	- update (azaz nem mûködõ lekérdezésre)
+
+1003	Készíts csomagot, amelyben egy privát kurzort deklarálsz, amely azoknak a dolgozóknak a nevét és az azonosítóját listázza, akiknek a fizetése kevesebb mint egy paraméterben kapott érték.
+	A csomag tartalmazzon egy eljárást, amely kinyitja a kurzort, ha az nincs nyitva, majd kiolvas a kurzorból 10 sort, amelyet egy publikus dinamikus tömbben tárol. 
+	Ha a kurzorban nincs több sor, akkor lezárja a kurzort, és újra megnyitja.
+
+1004	Írjunk blokkot, amelyben meghívjuk az elõzõ feladat csomagjának az eljárását, majd képernyõre írja a kollekció elemeit. Majd még kétszer hívjuk meg a blokkot.
+
+1005	A 3-as feladat csomagjában helyezd el a pragma serially_reusable pragmát, majd hívd mega 4. feladat blokkjait. Figyeld meg az eredmények közötti különséget.
