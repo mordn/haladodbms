@@ -1,0 +1,2 @@
+# haladodbms
+Halado DBMS Ismeretek
